@@ -14,7 +14,8 @@ ShoppingListItem.prototype.uncheck = function() {
 
 ShoppingListItem.prototype.render = function() {
   var SLIoutput = ('<li class="completed_' + this.is_done + '"><span>' + this.name + '</span><span>' + this.description + '</span></li>');
-  return SLIoutput;
+  return ('<li class="completed_' + this.is_done + '"><span>' + this.name + '</span><span>' + this.description + '</span></li>');
 }
 
+//console log output to make sure it matches exactly
 
