@@ -3,7 +3,15 @@ function ShoppingListItem(name, description) {
   this.description = description;
   this.is_done = null;
 
-  this.check = function() {
-    this.is_done = true;
-  }
+}
+ShoppingListItem.prototype.check = function() {
+  this.is_done = true;
+}
+
+ShoppingListItem.prototype.uncheck = function() {
+  this.is_done = false;
+}
+
+ShoppingListItem.prototype.render = function() {
+  return SLIoutput;
 }
