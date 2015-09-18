@@ -34,11 +34,6 @@ describe('ShoppingListItem', function() {
   // it('should have a "check" method', function() {
 
   describe('check', function() {
-    var subway;
-    beforeEach(function() {
-      subway = new ShoppingListItem('sandwich', 'footlong');
-    });
-
     it('should be a function', function() {
       subway.check.should.be.a('function');
       subway.is_done.should.equal.true;
@@ -46,10 +41,6 @@ describe('ShoppingListItem', function() {
   });
 
   describe('uncheck', function() {
-    var subway;
-    beforeEach(function() {
-      subway = new ShoppingListItem('sandwich', 'footlong');
-  });
     it('should be a function', function() {
       subway.uncheck.should.be.a('function');
       subway.is_done.should.equal.false;
@@ -57,10 +48,6 @@ describe('ShoppingListItem', function() {
   });
 
   describe('render', function() {
-    var subway;
-    beforeEach(function() {
-      subway = new ShoppingListItem('sandwich', 'footlong');
-  });
     it('should be a function', function() {
       subway.render().should.be.a('string');
       subway.render().should.equal('<li class="completed_true"><span>sandwich</span><span>footlong</span></li>');
@@ -69,30 +56,56 @@ describe('ShoppingListItem', function() {
 });
 
 
-
+// var subway;
+// beforeEach(function() {
+//   subway = new ShoppingListItem('sandwich', 'footlong');
+// var safeway = new ShoppingList();
+// var islandBurger = new ShoppingList('hummus');
 //SHOPPING LIST
 describe('ShoppingList', function() {
   var safeway;
   beforeEach(function() {
-    safeway = new ShoppingList('hummus');
+    safeway = new ShoppingList();
   });
-
   it('should be a class', function() {
-   expect(ShoppingList).to.be.a('function');
+    ShoppingList.should.to.be.a('function');
   });
 
-  it('should have a property item', function() {
+  it('should have an item property', function() {
     safeway.should.have.property('item');
-    safeway.item.should.be.empty;
   });
 
-  describe('addItem', function() {
-    it('should be a method', function() {
-    safeway.addItem.should.be.a('function');
+  it('item should be an empty array', function() {
+    safeway.item.should.deep.equal([]);
+  });
+
+  describe('addItem', function(item) {
+    it('should add a ShoppingListItem to item array', function() {
+      safeway.addItem(item).should.equal.true;
+      safeway.item.should.have.length(1);
     });
-    it('should accept a ShoppingListItem argument', function() {
-      safeway.addItem.should.have.property('ShoppingListItem');
-    })
+  });
+
+  describe('removeItem', function() {
+    it('should be a function', function() {
+      safeway.removeItem.should.be.a('function');
+    });
+    it('should remove a specified item from the item array', function() {
+
+    });
+    it('should remove last item from array if no parameters are entered', function() {
+
+    });
+    it('should throw an error if item is not a ShoppingListItem', function() {
+
+    });
+  });
+
+  describe('render', function () {
+    it('should be a method', function() {
+      safeway.render().should.be.a('string');
+      safeway.render().should.equal('');
+    });
   });
 });
 

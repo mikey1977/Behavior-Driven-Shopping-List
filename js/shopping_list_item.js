@@ -17,5 +17,28 @@ ShoppingListItem.prototype.render = function() {
   return ('<li class="completed_' + this.is_done + '"><span>' + this.name + '</span><span>' + this.description + '</span></li>');
 }
 
-//console log output to make sure it matches exactly
 
+
+// var SLI = ShoppingListItem(name, description);
+
+// function ShoppingList(item) {
+//   this.item = [];
+
+// }
+
+// ShoppingList.prototype.addItem = function(item) {
+//   if (item instanceof ShoppingListItem) {
+//     this.item.push(items);
+//     return true;
+//   } else {
+//     throw new Error('suck it, your item is not a ShoppingListItem');
+//   }
+// };
+
+// ShoppingList.prototype.removeItem = function() {
+
+// }
+
+
+// module.exports = ShoppingListItem;
+module.exports = ShoppingList;

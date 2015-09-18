@@ -1,16 +1,35 @@
+// var ShoppingList = require('./shopping_list_item');
+
+
+
+// var SLI = ShoppingListItem(name, description);
+
 function ShoppingList(item) {
   this.item = [];
-  // this.addItem = addItem;
 }
 
 ShoppingList.prototype.addItem = function(item) {
-  if (!item instanceof ShoppingList) {
-    throw new Error('suck it');
+  if (item instanceof ShoppingListItem) {
+    this.item.push(item);
+    return true;
+  } else {
+    throw new Error('suck it, your item is not a ShoppingListItem');
   }
-  this.item.push(item);
+};
+
+ShoppingList.prototype.removeItem = function(item) {
+
 }
 
 
+ShoppingList.prototype.render = function() {
+  return ('');
+}
 
-//ShoppingList.prototype.removeItem = function (ShoppingListItem) {
-//  if (this.items.indexOf(ShoppingList)
+// ShoppingList.prototype.removeItem = function (ShoppingListItem) {
+//  if (this.items.indexOf(ShoppingList){
+
+
+// }
+
+module.exports = ShoppingList;
