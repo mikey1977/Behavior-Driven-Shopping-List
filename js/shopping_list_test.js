@@ -29,10 +29,6 @@ describe('ShoppingListItem', function() {
     subway.is_done.should.equal.null;
   });
 
-
-  //when calling the instance, should set is_done to true
-  // it('should have a "check" method', function() {
-
   describe('check', function() {
     it('should be a function', function() {
       subway.check.should.be.a('function');
@@ -56,56 +52,93 @@ describe('ShoppingListItem', function() {
 });
 
 
-// var subway;
-// beforeEach(function() {
-//   subway = new ShoppingListItem('sandwich', 'footlong');
-// var safeway = new ShoppingList();
-// var islandBurger = new ShoppingList('hummus');
 //SHOPPING LIST
 describe('ShoppingList', function() {
-  var safeway;
-  beforeEach(function() {
-    safeway = new ShoppingList();
-  });
+  // var safeway;
+  // beforeEach(function() {
+  //   safeway = new ShoppingList();
+  // });
+  // var safeway = new ShoppingList();
+
+    //list as parameter?
+    //safeway = new ShoppingList('list');
   it('should be a class', function() {
+
     ShoppingList.should.to.be.a('function');
   });
 
   it('should have an item property', function() {
-    safeway.should.have.property('item');
+    var safeway = new ShoppingList('snacks', 'chips');
+    safeway.should.have.property('items');
+    // safeway.items.should.equal('chips');
+    // safeway.name.should.equal('list');
+    // include?
   });
 
   it('item should be an empty array', function() {
-    safeway.item.should.deep.equal([]);
+    var safeway = new ShoppingList();
+    expect(safeway.items).to.deep.equal([]);
   });
 
-  describe('addItem', function(item) {
+
+  describe('addItem', function() {
+    it('should be a function', function() {
+      var safeway = new ShoppingList();
+      expect(safeway.addItem).to.be.a('function');
+    });
+    it('should have a property name items', function() {
+
+    })
+    // items should be ShoppingListItem
+
     it('should add a ShoppingListItem to item array', function() {
-      safeway.addItem(item).should.equal.true;
-      safeway.item.should.have.length(1);
+      // var saferway = new ShoppingList('hummus');
+      // var safeway = new ShoppingList();
+      // safeway.addItem(items).should.equal('hummus');
+
+      // var saferway = new ShoppingList();
+      // var safestway = new ShoppingList('list');
+
+      var safeway = new ShoppingList();
+
+      saferway.addItem(items).should.be.equal.true;
+      saferway.items.should.have.length(1);
+      // expect(safeway.addItem('list')).to.equal('safestway');
+      // safeway.addItem(items).should.be.equal.true;
+      // safeway.items.should.have.length(1);
     });
   });
 
   describe('removeItem', function() {
     it('should be a function', function() {
-      safeway.removeItem.should.be.a('function');
+      expect(safeway.removeItem).to.be.a('function');
     });
-    it('should remove a specified item from the item array', function() {
 
+    it('should remove a specified item from the item array', function() {
+      // var saferway = new ShoppingList;
+      // var safestway = saferway('list');
+      // var safishway = saferway('list', 'crap');
+      // var safesterWay = saferway('list', 'of', 'crap');
+      // expect(safeway.removeItem('of')).to.equal(safishway);
     });
     it('should remove last item from array if no parameters are entered', function() {
-
+      // var saferway = new ShoppingList;
+      // var safesterWay = saferway('list', 'of', 'crap');
+      // var safestestWay = saferway('list', 'of');
+      // expect(safeway.removeItem()).to.equal(safestestWay);
     });
     it('should throw an error if item is not a ShoppingListItem', function() {
-
+      // var saferway = new ShoppingList;
+      // var safestway = saferway('list');
+      // expect(safeway.removeItem('cow')).to.be.false;
     });
   });
 
-  describe('render', function () {
-    it('should be a method', function() {
-      safeway.render().should.be.a('string');
-      safeway.render().should.equal('');
-    });
-  });
+  // describe('render', function () {
+  //   it('should be a method', function() {
+  //     safeway.render().should.be.a('string');
+  //     safeway.render().should.equal('');
+  //   });
+  // });
 });
 
