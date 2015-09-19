@@ -85,24 +85,23 @@ describe('ShoppingList', function() {
 
   describe('removeItem', function() {
     it('should be a function', function() {
-      var safeway = new ShoppingList();
       expect(safeway.removeItem).to.be.a('function');
     });
 
     it('should remove a specified item from the item array', function() {
-      var safeway = new ShoppingList();
       var items = new ShoppingListItem('crap');
+      safeway.removeItem(items);
       safeway.items.should.have.length(0);
 
     });
     it('should remove last item from array if no parameters are entered', function() {
-      // var saferway = new ShoppingList;
-      // var safesterWay = saferway('list', 'of', 'crap');
-      // var safestestWay = saferway('list', 'of');
-      // expect(safeway.removeItem()).to.equal(safestestWay);
+      var items = new ShoppingListItem('list', 'of', 'crap');
+      var popEnd = new ShoppingListItem('list', 'of');
+      safeway.items;
+      expect(safeway.removeItem()).to.equal(safeway.popEnd);
     });
+
     it('should throw an error if item is not a ShoppingListItem', function() {
-      var safeway = new ShoppingList();
       safeway.removeItem.should.throw(Error);
     });
   });
