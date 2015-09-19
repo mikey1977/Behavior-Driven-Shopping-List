@@ -27,7 +27,11 @@ ShoppingList.prototype.removeItem = function(items) {
 
 ShoppingList.prototype.render = function() {
   var str = '<ul class="list">';
+
+  // loop through with rendering
   for (var i = 0; i < this.items.length; i++) {
+
+    // adds internals between single opening and closing tags
     str += (this.items[i].render());
   }
   return str + '</ul>';

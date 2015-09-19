@@ -25,3 +25,18 @@ function add_to_shopping_list() {
 function changeCheckedStatus(idx, checkbox) {
 
 }
+
+function removeButtonClicked(checkbox) {
+  var wat = document.getElementsByName('wat');
+  for (i = 0; i < wat.length; i++) {
+    if (wat[i].checked)
+  {
+      var remove = wat[i];
+      wat[i].nextSibling.nodeValue = '';
+      remove.parentNode.removeChild(remove);
+      li = getElementsByTagName('li');
+      li.removeChild(li[i]);
+    } else {
+    }
+  }
+}
