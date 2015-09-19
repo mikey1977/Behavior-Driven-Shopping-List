@@ -105,11 +105,13 @@ describe('ShoppingList', function() {
       safeway.removeItem.should.throw(Error);
     });
   });
-  // describe('render', function () {
-  //   it('should be a method', function() {
-  //     safeway.render().should.be.a('string');
-  //     safeway.render().should.equal('');
-  //   });
-  // });
-});
 
+  describe('render', function () {
+    it('should be a method', function() {
+      var items = new ShoppingListItem('crap');
+      safeway.addItem(items);
+      safeway.render().should.be.a('string');
+      safeway.render().should.equal('<ul class="list"><li>[object Object]</li></ul>');
+    });
+  });
+});
