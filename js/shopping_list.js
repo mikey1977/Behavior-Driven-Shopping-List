@@ -26,8 +26,12 @@ ShoppingList.prototype.removeItem = function(items) {
 };
 
 ShoppingList.prototype.render = function() {
-  return ('<ul class="list"><li>' + this.items + '</li></ul>');
+  var str = '<ul class="list">';
+  for (var i = 0; i < this.items.length; i++) {
+    str += (this.items[i].render());
+  }
+  return str + '</ul>';
 }
 
 
-module.exports = ShoppingList;
+// module.exports = ShoppingList;

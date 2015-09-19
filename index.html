@@ -5,19 +5,17 @@
   <title>Document</title>
 </head>
 <body>
-  <script src='js/shopping_list_test.js'></script>
+  <script src="js/shopping_list_item.js"></script>
   <script src="js/shopping_list.js"></script>
   <script src="js/app.js"></script>
 
-  <div id="content"></div>
 
-  <form>
-    Title:<br>
-    <input type="text" id="title"><br>
-    Description:<br>
-    <input type="text" id="description">
-    <button id="add_shopping_list_item_button" onclick="add_to_shopping_list()">Don't Press</button>
-    <p id="pooch"></p>
-  </form>
+
+      <form>
+        <input type="text" value="title" id="title" class="input"/><br>
+        <input type="text" value="description" id="description" class="input"/><br>
+        <a href ="#" id="add_shopping_list_item" onclick="add_to_shopping_list()">Add to Shopping List</a>
+      </form>
+    <div id="content"></div>
 </body>
 </html>

@@ -14,7 +14,7 @@ ShoppingListItem.prototype.uncheck = function() {
 
 ShoppingListItem.prototype.render = function() {
   var SLIoutput = ('<li class="completed_' + this.is_done + '"><span>' + this.name + '</span><span>' + this.description + '</span></li>');
-  return ('<li class="completed_' + this.is_done + '"><span>' + this.name + '</span><span>' + this.description + '</span></li>');
+  return '<li class="completed_' + this.is_done + '"><span>' + this.name + '</span><span>' + this.description + '</span></li>';
 }
 
 
@@ -41,4 +41,4 @@ ShoppingListItem.prototype.render = function() {
 
 
 // module.exports = ShoppingListItem;
-module.exports = ShoppingList;
+// module.exports = ShoppingList;
