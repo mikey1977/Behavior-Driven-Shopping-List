@@ -4,7 +4,7 @@
 
 // var SLI = ShoppingListItem(name, description);
 
-function ShoppingList() {
+function ShoppingList(items) {
   this.items = [];
 }
 
@@ -17,19 +17,18 @@ ShoppingList.prototype.addItem = function(items) {
   }
 };
 
-ShoppingList.prototype.removeItem = function(item) {
-
-}
+ShoppingList.prototype.removeItem = function(items) {
+  if (this.items.indexOf(ShoppingList)) {
+    this.items.pop(items);
+  } else {
+    throw new Error('WTF, this is not a ShoppingListItem');
+  }
+};
 
 
 // ShoppingList.prototype.render = function() {
 //   return ('');
 // }
 
-// ShoppingList.prototype.removeItem = function (ShoppingListItem) {
-//  if (this.items.indexOf(ShoppingList){
-
-
-// }
 
 module.exports = ShoppingList;
